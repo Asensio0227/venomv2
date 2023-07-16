@@ -10,6 +10,7 @@ const SingleUser = () => {
 
   useEffect(() => {
     getSingleUserVideos(id)
+    // eslint-disable-next-line 
   },[id])
 
   return (

@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { useLocation,useNavigate,Link } from 'react-router-dom'
+import { useLocation,useNavigate} from 'react-router-dom'
 import styled from 'styled-components'
 import axios from 'axios'
 import { FormRow } from '../components'
@@ -41,7 +41,7 @@ const ResetPassword = () => {
       setSuccess(true);
       toast.success(`Success, redirecting to login page shortly`);
       setTimeout(() => {
-        history.push('/login')
+        history('/login')
       }, 3000);
     } catch (error) {
       toast.error(error.response.data.msg);
@@ -52,7 +52,7 @@ const ResetPassword = () => {
   return (
     <Wrapper>
       {!success && (
-        <form className={loading ? "form form-loading" : "form"}>
+        <form className={loading ? "form form-loading" : "form"} onSubmit={handleSubmit}>
           <FormRow
             type='password'
             name='password'

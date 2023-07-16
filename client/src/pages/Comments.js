@@ -43,6 +43,7 @@ const Comments = () => {
 
   useEffect(() => {
     getAllCommentsForSingleStream(id);
+    // eslint-disable-next-line 
   }, [id])
   
   return (

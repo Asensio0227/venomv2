@@ -11,9 +11,13 @@ const authenticatedUser = async(req, res, next) => {
       const payload = isTokenValid(accessToken);
       const testUser = payload.userId === process.env.TEST_USER_ID;
     const {
-      name, userId, roles, surname,
+      name,
+      userId,
+      roles,
+      surname,
       userProfile,
-      email } = payload;
+      email
+    } = payload;
     req.user = {
       name,
       userId,

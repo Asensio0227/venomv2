@@ -10,6 +10,7 @@ const Trends = () => {
 
   useEffect(() => {
     getAllVideos();
+    // eslint-disable-next-line 
   }, []);
 
   return (
