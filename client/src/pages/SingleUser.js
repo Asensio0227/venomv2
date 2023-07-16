@@ -6,7 +6,7 @@ import { useEffect } from "react";
 const SingleUser = () => {
   const { id } = useParams();
   const { getSingleUserVideos, numOfVideos, singleUserVideos } = useGlobalContext();
-  const PF = `https://venom-h97y.onrender.com`
+  const PF = process.env.PF
 
   useEffect(() => {
     getSingleUserVideos(id)

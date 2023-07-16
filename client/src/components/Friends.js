@@ -9,7 +9,7 @@ const defaultURL = axios.create({
 
 const Friends = () => {
   const { users,deleteUser } = useGlobalContext();
-  const PF = `https://venom-h97y.onrender.com`
+  const PF = process.env.PF
   const [friends, setFriends] = useState([]);
   const [index, setIndex] = useState(0);
 

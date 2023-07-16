@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import { FaComments } from "react-icons/fa";
 
 const Trends = () => {
-  const PF = `https://venom-h97y.onrender.com`
+  const PF = process.env.PF
   const { videos, getAllVideos } = useGlobalContext();
 
   useEffect(() => {

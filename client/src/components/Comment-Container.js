@@ -3,7 +3,7 @@ import defualtProfile from "../assets/images/user.jpg";
 import { useGlobalContext } from "../context/context";
 
 const CommentsContainer = ({ comments, user, _id }) => {
-  const PF = `https://venom-h97y.onrender.com`
+  const PF = process.env.PF
   const { name, userProfile } = user;
   const { removeComment } = useGlobalContext();
 

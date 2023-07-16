@@ -1,5 +1,5 @@
-// import logoSvg from "../assets/images/logo.svg"
-// import logoPNG from "../assets/images/logo.png"
+import logoSvg from "../assets/favicon-32x32.png"
+import logoPNG from "../assets/images/favicon-32x32.png"
 
 const Logo = () => {
   const getLocalStorageTheme = () => {
@@ -12,8 +12,8 @@ const Logo = () => {
   const themes = getLocalStorageTheme();
   return (
         <>
-      {/* {themes !== "light-theme" ? <img src ="hello" alt = "trends" className = "logo" /> : <img src = { logoPNG } alt = "trends" className = "logo" />} */}
-      <img src ="hello" alt = "trends" className = "logo" />
+      {themes !== "dark-theme" ? <img src={logoPNG} alt="trends" className="logo" /> : <img src={ logoSvg } alt="trends" className="logo" />}
+      {/* <img src ="hello" alt = "trends" className = "logo" /> */}
         </>
   )
 }

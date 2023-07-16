@@ -4,7 +4,7 @@ import {Link} from "react-router-dom"
 import { useEffect,useState } from "react";
 
 const getLocalStorageTheme = () => {
-  let theme = 'dark-theme';
+  let theme = 'light-theme';
   if (localStorage.getItem('theme')) {
     theme = localStorage.getItem('theme');
   }
@@ -16,10 +16,10 @@ const Navbar = () => {
   const [theme, setTheme] = useState(getLocalStorageTheme());
 
   const toggleTheme = () => {
-    if (theme === 'dark-theme') {
-      setTheme('light-theme');
-    } else {
+    if (theme === 'light-theme') {
       setTheme('dark-theme');
+    } else {
+      setTheme('light-theme');
     }
   }
 

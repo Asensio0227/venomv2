@@ -38,7 +38,7 @@ app.use(helmet());
 app.use(xss());
 app.use(mongoSanitize())
 
-app.use(express.static(path.join(__dirname,'/public')))
+app.use(express.static(path.join(__dirname,'/public/build')))
 app.use(express.json());
 app.use("/streams",express.static(path.join(__dirname, './public/streams')))
 app.use("/uploads",express.static(path.join(__dirname, './public/uploads')))
@@ -51,7 +51,7 @@ app.use('/api/v1/streams', streamRoutes);
 app.use('/api/v1/comments', commentRoutes);
 
 app.get('*', (req, res) => {
-  res.sendFile(path.resolve(__dirname, './public', "index.html"));
+  res.sendFile(path.resolve(__dirname, './public/build', "index.html"));
 })
 
 app.use(notFoundMiddleware);

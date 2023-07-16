@@ -2,7 +2,7 @@ import { useState } from "react"
 import { Logo ,FormRow} from "../components"
 import {useGlobalContext} from "../context/context"
 import { toast } from "react-toastify"
-import { Link } from "react-router-dom";
+import { Link,useNavigate } from "react-router-dom";
 import { styled } from "styled-components";
 
 const initialState = {
@@ -16,7 +16,8 @@ const initialState = {
 const Register = () => {
   const [isMember, setIsMember] = useState(true);
   const [values, setValues] = useState(initialState)
-  const { isLoading, registerUsers } = useGlobalContext();
+  const { isLoading, registerUsers,setupUsers } = useGlobalContext();
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     const name = e.target.name;
@@ -86,14 +87,14 @@ const Register = () => {
            register
         </button>
         <button type="button" disabled={isLoading} className="demo-btn btn btn-hipster" onClick={() => {
-          console.log('test user')
-          registerUsers({
+          setupUsers({
             currentUser: {
               email: 'testUser@test.com',
               password: 'secret'
             },
             alertText: 'Login Successful! Redirecting...',
           });
+            navigate('/')
         }}>
           continue without registering
         </button>

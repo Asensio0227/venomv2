@@ -7,8 +7,7 @@ import { useGlobalContext } from "../context/context";
 import { authFetch } from "../utils/authFetch";
 import { toast } from "react-toastify";
 
-  // const PF = `https://venom-h97y.onrender.com`
-  const PF = `http://localhost:3000`
+  const PF = process.env.PF
 
 const Profile = ({ fullProfile }) => {
   const { users, logoutUser, changePassword, updateUserProfile } = useGlobalContext();
