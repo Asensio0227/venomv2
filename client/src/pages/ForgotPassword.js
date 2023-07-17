@@ -23,7 +23,7 @@ const ForgotPassword = () => {
       return;
     }
     try {
-      const { data } = await axios.post('/api/v1/auth/forgot-password', {
+      const { data } = await axios.post('https://venomv2.onrender.com/api/v1/auth/forgot-password', {
         email
       });
       toast.success(data.msg);

@@ -21,7 +21,7 @@ const Verify = () => {
   const verifyToken = async () => {
     setLoading(true);
     try {
-      const { data } = await axios.post('/api/v1/auth/verify-email', {
+      const { data } = await axios.post('https://venomv2.onrender.com/api/v1/auth/verify-email', {
         verificationToken: query.get('token'),
         email: query.get('email'),
       });

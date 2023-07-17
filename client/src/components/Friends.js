@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { useGlobalContext } from '../context/context';
 import axios from "axios"
 const defaultURL = axios.create({
-  baseURL: `/api/v1`
+  baseURL: `https://venomv2.onrender.com/api/v1`
 });
 
 const Friends = () => {

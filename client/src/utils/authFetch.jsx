@@ -2,7 +2,7 @@ import axios from 'axios'
 import { toast } from "react-toastify";
 
 export const authFetch = axios.create({
-    baseURL: '/api/v1',
+    baseURL: 'https://venomv2.onrender.com/api/v1',
     headers: {
       'Content-Type': 'multipart/form-data'
     }

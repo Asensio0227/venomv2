@@ -32,7 +32,7 @@ const ResetPassword = () => {
       return;
     }
     try {
-      await axios.post('/api/v1/auth/reset-password', {
+      await axios.post('https://venomv2.onrender.com/api/v1/auth/reset-password', {
         password,
         token: query.get('token'),
         email: query.get('email')
