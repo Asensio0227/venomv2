@@ -6,7 +6,7 @@ import { useEffect } from "react";
 const SingleUser = () => {
   const { id } = useParams();
   const { getSingleUserVideos, numOfVideos, singleUserVideos } = useGlobalContext();
-  const PF = process.env.PF
+  const PF = process.env.REACT_APP_PUBLIC_HOST
 
   useEffect(() => {
     getSingleUserVideos(id)

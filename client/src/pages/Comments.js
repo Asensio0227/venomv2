@@ -7,7 +7,7 @@ import {
   Friends,
   Profile
 } from "../components"
-import { FiArrowDownCircle, FiSend } from "react-icons/fi";
+import { FiArrowLeftCircle, FiSend } from "react-icons/fi";
 
 const Comments = () => {
   const { id } = useParams();
@@ -53,7 +53,7 @@ const Comments = () => {
       </div>
       <article className="comments-center">
         <Link to="/" className="btn">
-          <FiArrowDownCircle />
+          <FiArrowLeftCircle />
         </Link>
         <form className="form-comment">
           <div className="form-row">

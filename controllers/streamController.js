@@ -16,21 +16,10 @@ const uploadVideo = async (req, res) => {
     throw new CustomError.BadRequestError(`Invalid video:  ${videoFile.name}`)
   }
   const videoPath = path.join(__dirname, "../public/streams/" + `${videoFile.name}`);
+  console.log(videoPath);
   await videoFile.mv(videoPath);
   
-  res.status(StatusCodes.OK).json({ video: `/streams/${videoFile.name}`});
-}
-const uploadVideoCloudinary = async (req, res) => {
-  console.log(req.files.video);
-  const result = await cloudinary.uploader.upload(
-    req.files.video.tempFilePath,
-    {
-      use_filename: true,
-      folder: `tiktok`
-    }
-  );
-  fs.unlinkSync(req.files.video.tempFilePath);
-  return res.status(StatusCodes.OK).json({ video: result.secure_url });
+  res.status(StatusCodes.OK).json({ video: `/streams/${videoFile.name}` });
 };
 
 const postVideo = async (req, res) => {

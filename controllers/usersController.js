@@ -87,7 +87,7 @@ const deleteUser = async (req, res) => {
  res.status(StatusCodes.OK).json({msg:`user removed`})
 }
 
-const userProfile = async (req, res)=>{
+const userProfileLocal = async (req, res)=>{
   if (!req.files) {
     throw new CustomError.BadRequestError('No file uploaded')
   }
@@ -104,7 +104,7 @@ const userProfile = async (req, res)=>{
   res.status(StatusCodes.OK).json({ image: `/uploads/${image.name}` });
 }
 
-const userProfileCloudanry = async (req, res) => {
+const userProfile= async (req, res) => {
   const result = await cloudinary.uploader.upload(
     req.files.image.tempFilePath,
     {

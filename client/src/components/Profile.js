@@ -7,8 +7,6 @@ import { useGlobalContext } from "../context/context";
 import { authFetch } from "../utils/authFetch";
 import { toast } from "react-toastify";
 
-  const PF = process.env.PF
-
 const Profile = ({ fullProfile }) => {
   const { users, logoutUser, changePassword, updateUserProfile } = useGlobalContext();
   const [oldPassword, setOldPassword] = useState('');
@@ -95,7 +93,7 @@ const Profile = ({ fullProfile }) => {
           {file ?
             <img src={URL.createObjectURL(file)} alt="" className="sidebar-img img" />
             :
-            <img src={userData.userProfile ? PF + userData.userProfile : defaultUserProfile} alt="" className="sidebar-img img" />
+            <img src={!userData.userProfile ? userData.userProfile : defaultUserProfile} alt="" className="sidebar-img img" />
           }
         </div>
         {!fullProfile && (

@@ -9,7 +9,6 @@ const defaultURL = axios.create({
 
 const Friends = () => {
   const { users,deleteUser } = useGlobalContext();
-  const PF = process.env.PF
   const [friends, setFriends] = useState([]);
   const [index, setIndex] = useState(0);
 
@@ -42,7 +41,7 @@ const Friends = () => {
           const { name, userProfile, _id } = items;
           return (
             <Link to={`/user/${_id}`} className="users" key={_id}>
-              <img src={userProfile ? PF + userProfile : defaultUserProfile} alt={name} className="user-img img" />
+              <img src={users.userProfile ? userProfile : defaultUserProfile} alt={name} className="user-img img" />
               <div className="friends-info">
                 <h5 className="user-name">@{name.toUpperCase()}</h5>
               {users?.roles === 'admin' && (

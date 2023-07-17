@@ -13,7 +13,6 @@ const Logo = () => {
   return (
         <>
       {themes !== "dark-theme" ? <img src={logoPNG} alt="trends" className="logo" /> : <img src={ logoSvg } alt="trends" className="logo" />}
-      {/* <img src ="hello" alt = "trends" className = "logo" /> */}
         </>
   )
 }

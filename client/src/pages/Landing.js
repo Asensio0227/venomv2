@@ -19,7 +19,7 @@ const Landing = () => {
         <p>
           They’re being inundated with information and clutter and, because of this, they’re now demanding more. The modern consumer is sophisticated, powerful, and has increased expectations
         </p>
-        <Link to="/register" className="btn landing-btn">
+        <Link to="/login" className="btn landing-btn">
           register/login
         </Link>
         </div>

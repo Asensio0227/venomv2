@@ -51,7 +51,7 @@ const Register = () => {
     <>
       <Wrapper className="page auth-flow">
         <form
-          className={isLoading ? 'form form-loading' : 'form'}
+          className={isLoading ? 'form form-loading form-register' : 'form'}
           onSubmit={submitChange}>
         <Logo className="form-logo" />
         <h2>
